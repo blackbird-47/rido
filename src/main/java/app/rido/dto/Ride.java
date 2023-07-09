@@ -1,6 +1,5 @@
 package app.rido.dto;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
