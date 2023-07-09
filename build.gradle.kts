@@ -31,3 +31,15 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+
+configurations {
+    listOf(apiElements, runtimeElements).forEach { runtimeElement ->
+        runtimeElement.get().outgoing.artifacts.filter { artifact -> artifact.buildDependencies.getDependencies(null).contains(tasks.jar.get()) }
+        runtimeElement.get().outgoing.artifact(tasks.bootJar.get())
+    }
+}
+
+tasks.named<Jar>("jar") {
+    enabled = false
+}
