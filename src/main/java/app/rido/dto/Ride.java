@@ -9,11 +9,12 @@ public class Ride {
     @Id
     private String id;
     private String title;
-    private Integer distance;
-    private String maxSlots;
-    private String availableSlots;
+    private int distance;
+    private int maxSlots;
+    private int availableSlots;
     private Date startTime;
     private Date endTime;
+    private int durationInHours;
     private String hostId;
     private String source;
     private String destination;
