@@ -1,0 +1,35 @@
+create table Rider(
+    id uuid primary key,
+    name varchar(20) NOT NULL,
+    accountCreationDate date NOT NULL,
+    lastLogin date NOT NULL
+)
+
+CREATE TYPE RiderIntent AS ENUM ('GOING', 'NOT_GOING');
+
+create table RiderOnRide(
+    rideId uuid,
+    riderId uuid,
+    riderIntent RiderIntent,
+    noShow boolean,
+    lastModified TIMESTAMPTZ,
+    PRIMARY KEY(rideId, riderId)
+);
+
+CREATE TYPE RideStatus AS ENUM ('UPCOMING', 'DELAYED', 'IN_PROGRESS', 'CANCELLED', 'COMPLETED');
+
+create table Ride(
+    id uuid primary key,
+    title varchar(40) NOT NULL,
+    distance int NOT NULL,
+    maxSlots int NOT NULL,
+    availableSlots int NOT NULL,
+    startTime TIMESTAMPTZ NOT NULL,
+    endTime TIMESTAMPTZ NOT NULL,
+    durationInHours int NOT NULL,
+    hostId uuid NOT NULL,
+    source varchar(50) NOT NULL,
+    destination varchar(50) NOT NULL,
+    bannerURL varchar(100) NOT NULL,
+    status RideStatus NOT NULL
+);
