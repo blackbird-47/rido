@@ -8,7 +8,7 @@ import java.util.Date;
 public class RiderOnRide {
     private String rideId;
     private String riderId;
-    private boolean noshow;
+    private boolean noShow;
     private RiderIntent riderIntent;
     private Date lastModifiedDate;
 }
