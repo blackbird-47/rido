@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RideRepository extends JpaRepository<Ride, Long> {
-    Ride findByRideId(String rideId);
 }
