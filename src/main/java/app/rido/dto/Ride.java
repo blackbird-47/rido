@@ -9,14 +9,14 @@ public class Ride {
     @Id
     private String id;
     private String title;
-    private String distance;
+    private Integer distance;
     private String maxSlots;
     private String availableSlots;
     private Date startTime;
     private Date endTime;
     private String hostId;
-    private String startLocationId;
-    private String endLocationId;
+    private String source;
+    private String destination;
     private String bannerUrl;
     private RideStatus status;
 }
