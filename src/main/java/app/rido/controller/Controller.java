@@ -3,6 +3,7 @@ package app.rido.controller;
 import app.rido.dto.Ride;
 import app.rido.service.RideService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class Controller{
     @PostMapping("/createRide")
     public ResponseEntity<String> createRide(@RequestBody Ride ride) {
         rideService.createRide(ride);
-        return new ResponseEntity<>(null);
+        return new ResponseEntity<String>(ride.getId(), HttpStatus.CREATED);
     }
 
 //    @PostMapping("/createRider")

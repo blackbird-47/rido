@@ -18,6 +18,6 @@ public class Ride {
     private String hostId;
     private String source;
     private String destination;
-    private String bannerUrl;
+    private String bannerURL;
     private RideStatus status;
 }
