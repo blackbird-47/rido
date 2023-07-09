@@ -20,5 +20,4 @@ public class RideService {
 //        rideRepository.save(rideDetails);
 
     }
-
 }

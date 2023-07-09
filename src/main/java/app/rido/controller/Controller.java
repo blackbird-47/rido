@@ -1,6 +1,5 @@
 package app.rido.controller;
 
-
 import app.rido.dto.Ride;
 import app.rido.service.RideService;
 import org.springframework.beans.factory.annotation.Autowired;

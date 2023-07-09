@@ -12,4 +12,5 @@ public class Rider {
     private String name;
     private Date accountCreationDate;
     private Date lastLoginTime;
+
 }
