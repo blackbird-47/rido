@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 @Data
+@Entity
 public class Ride {
     @Id
     private String id;
