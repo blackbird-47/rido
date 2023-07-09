@@ -1,7 +1,7 @@
 package app.rido.service;
 
 
-import app.rido.dto.RideDetails;
+import app.rido.dto.Ride;
 import app.rido.repository.RideRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +13,10 @@ public class RideService {
 
     @Autowired
     private RideRepository rideRepository;
-    public void createRide(RideDetails rideDetails){
+    public void createRide(Ride ride){
         UUID uuid = UUID.randomUUID();
-        rideDetails.setId(uuid.toString());
+        ride.setId(uuid.toString());
+//        rideRepository.save(rideDetails)
 //        rideRepository.save(rideDetails);
 
     }

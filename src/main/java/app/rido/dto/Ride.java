@@ -5,12 +5,14 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 @Data
-public class RideDetails {
+public class Ride {
     @Id
     private String id;
     private String title;
     private String approxDistance;
-    private String maxRiders;
+    private String maxSlots;
+    private String availableSlots;
+    private String filledSlots;
     private Date rideStartTime;
     private Date rideEndTime;
     private String ownerId;
