@@ -18,7 +18,8 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.1")
+	implementation("org.postgresql:postgresql:42.6.0")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-parent:3.1.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
