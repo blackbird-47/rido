@@ -16,7 +16,7 @@ public class RideService {
     private RideRepository rideRepository;
     public void createRide(Ride ride){
         UUID uuid = UUID.randomUUID();
-        ride.setId(uuid.toString());
+        ride.setId(uuid);
         ride.setStatus(RideStatus.UPCOMING);
         rideRepository.save(ride);
     }
