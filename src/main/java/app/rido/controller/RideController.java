@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RequestMapping("/v1/ride")
 public class RideController {
 
@@ -16,9 +14,9 @@ public class RideController {
     private RideService rideService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> createRide(@RequestBody Ride ride) {
+    public ResponseEntity<Ride> createRide(@RequestBody Ride ride) {
         rideService.createRide(ride);
-        return new ResponseEntity<String>(ride.getId(), HttpStatus.CREATED);
+        return new ResponseEntity<>(ride, HttpStatus.CREATED);
     }
 
     @GetMapping("/{rideId}}")
