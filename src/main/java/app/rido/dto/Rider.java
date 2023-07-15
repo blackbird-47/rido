@@ -5,14 +5,14 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Data
 @Entity
 public class Rider {
     @Id
-    private String id;
+    private UUID id;
     private String name;
-    private Date accountCreationDate;
-    private Date lastLoginTime;
-
+    private Date accountcreationdate;
+    private Date lastlogin;
 }

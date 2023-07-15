@@ -10,14 +10,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/v1/rido/rider")
+import java.util.UUID;
+
+@RequestMapping("/v1/rider")
 @RestController
 public class RiderController {
     @Autowired
     private RiderService riderService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> createRider(@RequestBody Rider rider) {
+    public ResponseEntity<UUID> createRider(@RequestBody Rider rider) {
         riderService.createRider(rider);
         return new ResponseEntity<>(rider.getId(), HttpStatus.CREATED);
     }

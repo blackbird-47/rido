@@ -15,9 +15,9 @@ public class RiderService {
 
     public void createRider(Rider rider){
         UUID uuid = UUID.randomUUID();
-        rider.setId(uuid.toString());
-        rider.setAccountCreationDate(new Date());
-        rider.setLastLoginTime(new Date());
+        rider.setId(uuid);
+        rider.setAccountcreationdate(new Date());
+        rider.setLastlogin(new Date());
         riderRepository.save(rider);
     }
 
