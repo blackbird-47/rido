@@ -12,22 +12,12 @@ import java.util.UUID;
 
 @Service
 public class RiderService {
-    private SimpleDateFormat simpleDateFormat;
-    @PostConstruct
-    public void init(){
-        String DATE_PATTERN = "dd-mm-yyyy HH:mm:ss";
-        simpleDateFormat= new SimpleDateFormat(DATE_PATTERN);
-    }
-
     @Autowired
     private RiderRepository riderRepository;
 
     public void createRider(Rider rider){
         UUID uuid = UUID.randomUUID();
         rider.setId(uuid);
-        String date = simpleDateFormat.format(new Date());
-//        simpleDateFormat.
-//        System.out.println(date);
         rider.setAccountcreationdate(new Timestamp(new Date().getTime()));
         rider.setLastlogin(new Date());
         riderRepository.save(rider);
@@ -36,7 +26,4 @@ public class RiderService {
     public Rider getRider(String riderId){
        return riderRepository.getById(riderId);
     }
-
-
-
 }
