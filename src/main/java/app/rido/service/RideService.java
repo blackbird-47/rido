@@ -20,4 +20,12 @@ public class RideService {
         ride.setStatus(RideStatus.UPCOMING);
         rideRepository.save(ride);
     }
+
+    public Ride getRide(String rideId){
+        return rideRepository.getById(rideId);
+    }
+
+    public Ride getRides(String rideId){
+        return rideRepository.getById(rideId);
+    }
 }
