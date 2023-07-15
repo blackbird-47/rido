@@ -4,11 +4,8 @@ import app.rido.service.RiderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 @RequestMapping("/v1/rider")
 @RestController
 public class RiderController {
@@ -21,8 +18,8 @@ public class RiderController {
         return new ResponseEntity<>(rider, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{riderId}")
-    public ResponseEntity<Rider> getRider(String  riderId) {
+    @GetMapping("/{id}")
+    public ResponseEntity<Rider> getRider(@PathVariable(value = "id") String riderId) {
         Rider rider = riderService.getRider(riderId);
         return new ResponseEntity<>(rider, HttpStatus.OK);
     }

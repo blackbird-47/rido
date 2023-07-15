@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/v1/ride")
+@RestController
 public class RideController {
 
     @Autowired
@@ -19,8 +20,9 @@ public class RideController {
         return new ResponseEntity<>(ride, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{rideId}}")
-    public ResponseEntity<Ride> getRide(String rideId) {
+    @GetMapping("/{id}")
+    public ResponseEntity<Ride> getRide(@PathVariable (value = "id")
+                                            String rideId) {
         Ride ride = rideService.getRide(rideId);
         return new ResponseEntity<Ride>(ride, HttpStatus.OK);
     }
