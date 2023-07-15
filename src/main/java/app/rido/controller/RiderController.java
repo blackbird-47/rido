@@ -19,9 +19,9 @@ public class RiderController {
     private RiderService riderService;
 
     @PostMapping("/create")
-    public ResponseEntity<UUID> createRider(@RequestBody Rider rider) {
+    public ResponseEntity<Rider> createRider(@RequestBody Rider rider) {
         riderService.createRider(rider);
-        return new ResponseEntity<>(rider.getId(), HttpStatus.CREATED);
+        return new ResponseEntity<>(rider, HttpStatus.CREATED);
     }
 
     @GetMapping("/{riderId}")

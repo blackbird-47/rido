@@ -54,8 +54,8 @@ CREATE TABLE Ride(
 CREATE TABLE Rider(
    id uuid primary key,
    name varchar(20) NOT NULL,
-   accountCreationDate date NOT NULL,
-   lastLogin date NOT NULL
+   accountCreationDate TIMESTAMPTZ NOT NULL,
+   lastLogin TIMESTAMPTZ NOT NULL
    );
 ```
 
